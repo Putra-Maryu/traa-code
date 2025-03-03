@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAA-CODE | LINKTREE</title>
+    <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+    <meta name="description" content="Temukan semua link penting TRAA-CODE di satu tempat. Kunjungi sosial media, portfolio, dan lainnya.">
+    <meta name="keywords" content="linktree, TRAA-CODE, sosial media, portfolio, kontak">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .light-mode {
+            background-color: #f2f2f2;
+            color: #121212;
+        }
+
+        .light-mode .link-button {
+            background-color: #ffffff;
+            color: #121212;
+        }
+
+        .light-mode .link-button:hover {
+            background-color: #1E90FF;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .profile {
+            margin-bottom: 30px;
+            animation: slideInDown 1s ease-in-out;
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2.5px solid #1E90FF;
+            margin-top: 2rem;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .profile img:hover {
+            transform: scale(1.1);
+        }
+
+        .profile h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #1E90FF;
+        }
+
+        .profile p {
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .light-mode .profile p {
+            color: #121212;
+        }
+
+        .link-button {
+            display: block;
+            background-color: #1E90FF;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .link-button:hover {
+            background-color: #0b4a8a;
+            transform: scale(1.05);
+        }
+
+        .darkmode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1E90FF; 
+            border: 2px solid #0b4a8a;
+            color: #ffffff;
+            
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .darkmode-toggle:hover {
+            background-color: #0b4a8a;
+            border: 2px solid #1E90FF;
+            transform: scale(1.1);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #ffffff;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .light-mode footer {
+            color: #121212;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .profile img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile h1 {
+                font-size: 24px;
+            }
+
+            .profile p {
+                font-size: 14px;
+            }
+
+            .link-button {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="assets/roket-dark.png" alt="Profile Traa Code">
+            <h1>TRAA-CODE</h1>
+            <p>Selamat datang di halaman Linktree TRAACODE. Temukan semua link penting di sini!</p>
+        </div>
+        <a href="https://instagram.com/traa_kinx" class="link-button" target="_blank">Instagram</a>
+        <a href="https://tiktok.com/@traa_developer" class="link-button" target="_blank">TikTok</a>
+        <a href="https://youtube.com/@TraaHost" class="link-button" target="_blank">YouTube</a>
+        <a href="https://lynk.id/traafactory" class="link-button" target="_blank">LynkId</a>
+        <footer>
+            &copy; 2025 TRAA-CODE | Dirancang oleh <br> Putra Maryu Sunjaya
+        </footer>
+    </div>
+    <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Toggle Dark Mode">&#x1F319;</button>
+    <script>
+        const darkmodeToggle = document.getElementById('darkmode-toggle');
+        const body = document.body;
+
+        darkmodeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+        }
+    </script>
+</body>
+</html>

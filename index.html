@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAA-CODE | HOME</title>
+    <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .light-mode {
+            background-color: #f2f2f2; 
+            color: #121212;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .light-mode .navbar {
+            background-color: #ffffff;
+        }
+
+        .light-mode #about {
+            background-color: #ffffff;
+            color: #121212;
+        }
+
+        .light-mode #about p {
+            color: #121212;
+        }
+
+        .light-mode .nav-links a {
+            color: #121212;
+        }
+
+        .light-mode .footer-content {
+            background-color: #f2f2f2;
+            color: #121212;
+        }
+
+        .light-mode .darkmode-toggle {
+            background-color: #121212;
+            color: #ffffff;
+            box-shadow: #121212;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1E90FF; 
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #1E90FF;
+            bottom: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .nav-links a:hover {
+            color: #1E90FF; 
+            transform: scale(1.1);
+        }
+
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger-icon {
+            font-size: 30px;
+            color: #1E90FF;
+        }
+
+        #about {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #1a1a1a;
+            margin-top: 1.3rem;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        #about .logo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            margin-right: 40px;
+        }
+
+        #about .logo img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #about .description {
+            flex: 2;
+            text-align: left;
+        }
+
+        #about h1 {
+            font-size: 32px;
+            color: #1E90FF;
+            margin-bottom: 10px;
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        #about p {
+            font-size: 18px;
+            color: #fff;
+            line-height: 1.6;
+            animation: slideInRight 1s ease-in-out;
+        }
+
+        #about button {
+            border: 2px solid #121212;
+        }
+
+        #tag-h2-100 {
+            background-color: #1E90FF;
+            color: #121212;
+            border: none;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            width: 200px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #tag-h2-100:hover {
+            background-color: #8bba25;
+            transform: scale(1.05);
+        }
+
+        #tag-h2-100 p {
+            margin: 0;
+            font-size: 10px;
+            font-weight: bold;
+            color: #121212;
+        }
+
+        #tag-h2-100 h1 {
+            margin: 5px 0 0;
+            font-size: 24px;
+            font-weight: normal;
+            color: #121212;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            padding: 40px 20px;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 50px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer-section {
+            width: 30%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            color: #1E90FF;
+            margin-bottom: 10px;
+        }
+
+        .footer-section p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .footer-links a {
+            color: #1E90FF;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #6495ED;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .footer-bottom span {
+            color: #e25555;
+        }
+
+        .darkmode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1E90FF; 
+            color: #ffffff;
+            border: none;
+            padding: 20px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .darkmode-toggle:hover {
+            background-color: #0b4a8a;
+            transform: scale(1.1);
+        }
+
+        .mulai button{
+            background-color: white;
+            color: black;
+            margin-top: 1rem;
+            padding-left: 3rem;
+            padding-right: 3rem;
+            padding-top: 0.7rem;
+            padding-bottom: 0.7rem;
+            border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .mulai button:hover{
+            background-color: #0b4a8a;
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @media (max-width: 770px) {
+            #about {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            #tag-h2-100 {
+                width: 45%; 
+                font-size: 14px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+                text-align: left;
+                animation: slideInRight 0.5s ease-in-out;
+            }
+
+            .nav-links li {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+
+            .hamburger-menu {
+                display: block;
+            }
+
+            .nav-links.active {
+                display: flex;
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 150%;
+                width: 50%;
+                background-color: #1a1a1a;
+                z-index: 10;
+                animation: slideInRight 0.5s ease-in-out;
+            }
+
+            .nav-links a {
+                padding: 20px;
+                text-align: left;
+                color: #ffffff;
+                font-size: 22px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                width: 100%;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="navbar-brand" aria-label="NAMA">TRAA-CODE</div>
+                <div class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
+                    <span class="hamburger-icon">&#9776;</span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" style="color: #1E90FF;">Home</a></li>
+                    <li><a href="kelas/index.html">Kelas</a></li>
+                    <li><a href="linktree.html">Kontak</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="logo">
+            <img src="assets/roket-dark.png" alt="TRAA-CODE LOGO" aria-label="Logo Traa-Code">
+        </div>
+        <div class="description">
+            <h1 class="typing-text"></h1><span class="cursor"></span>
+            <p>Selamat datang di website saya! Saya Putra Maryu Sunjaya, siswa kelas industri di SMK PGRI Telagasari. Di sini, saya berbagi ide, dan pengalaman dalam dunia teknologi serta pengembangan web. Mari belajar dan berkembang bersama!</p>
+            <div class="mulai">
+                <a href="kelas/index.html"><button>Mulai</button></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Informasi</h3>
+                <p>Belajar coding dari dasar, bersama kami di TRAA CODE. Temukan materi, tutorial, dan inspirasi untuk menjadi developer.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Motivasi</h3>
+                <p>"Coding bukan tentang menulis kode, melainkan tentang memecahkan masalah dan menciptakan solusi untuk masa depan."</p>
+            </div>
+            <div class="footer-section">
+                <h3>Sosial Media</h3>
+                <div class="footer-links">
+                    <a href="https://instagram.com/traa_kinx" target="_blank">Instagram</a>
+                    <a href="https://tiktok.com/@traa_developer" target="_blank">TikTok</a>
+                    <a href="https://youtube.com/@TraaHost" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-links">
+            <p><a href="https://policies.google.com/privacy?hl=id" target="_blank">Kebijakan Privasi</a></p>
+            <p><a href="https://policies.google.com/terms?hl=id" target="_blank">Syarat & Ketentuan</a></p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TRAA CODE | Semua hak dilindungi.</p>
+            <p>Dirancang oleh Putra Maryu Sunjaya</p>
+        </div>
+    </footer>
+
+    <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Toggle Dark Mode">&#x1F319;</button>
+
+    <script>
+        const darkmodeToggle = document.getElementById('darkmode-toggle');
+        const body = document.body;
+        const navbar = document.querySelector('.navbar');
+        const footer = document.querySelector('footer');
+
+        darkmodeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            navbar.classList.toggle('light-mode');
+            footer.classList.toggle('light-mode');
+            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            navbar.classList.add('light-mode');
+            footer.classList.add('light-mode');
+        }
+
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburgerMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && !e.target.closest('.navbar')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        const text = "TRAA CODE"; 
+        const typingText = document.querySelector('.typing-text');
+        let index = 0;
+        let isDeleting = false;
+
+        function typeText() {
+          if (!isDeleting) {
+            typingText.textContent += text.charAt(index);
+            index++;
+            if (index === text.length) {
+              isDeleting = true;
+              setTimeout(typeText, 1000);
+            } else {
+              setTimeout(typeText, 250);
+            }
+          } else {
+            typingText.textContent = text.substring(0, index - 1);
+            index--;
+            if (index === 0) {
+              isDeleting = false;
+              setTimeout(typeText, 1000); 
+            } else {
+              setTimeout(typeText, 50); 
+            }
+          }
+        }
+        typeText();
+    </script>
+</body>
+</html>

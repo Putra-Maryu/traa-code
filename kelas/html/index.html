@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAA-CODE | HTML</title>
+    <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../favicon/site.webmanifest">
+    <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+      padding: 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #1a1a1a;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1E90FF;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 5px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #1E90FF;
+      transform: scale(1.1);
+    }
+
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hamburger-icon {
+      font-size: 30px;
+      color: #1E90FF;
+    }
+
+    .konten-kelas {
+      padding: 20px;
+    }
+
+    .konten-kelas h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .kelas-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 1rem;   
+      justify-content: center;
+    }
+
+    .kelas-card {
+      display: flex;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 600px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .kelas-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .kelas-card img {
+      width: 200px;
+      object-fit: cover;
+    }
+
+    .kelas-card-content {
+      padding: 20px;
+    }
+
+    .kelas-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #1E90FF;
+    }
+
+    .kelas-card p {
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        text-align: left;
+      }
+
+      .nav-links li {
+        margin-left: 0;
+        margin-bottom: 15px;
+      }
+
+      .hamburger-menu {
+        display: block;
+      }
+
+      .nav-links.active {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 60%;
+        background-color: #1a1a1a;
+        z-index: 10;
+        padding: 20px;
+      }
+
+      .nav-links a {
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+
+      .konten h1 {
+        font-size: 24px;
+      }
+
+      .konten h2 {
+        font-size: 18px;
+      }
+
+      .konten p {
+        font-size: 14px;
+      }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="navbar">
+            <div class="navbar-brand" aria-label="NAMA">TRAA-CODE</div>
+            <div class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
+              <span class="hamburger-icon">&#9776;</span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="../index.html" style="color: #1E90FF;">Kelas</a></li>
+              <li><a href="../../linktree.html">Kontak</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+
+    <div class="konten-kelas">
+        <h1>HTML 5 DASAR</h1>
+
+        <div class="kelas-container">
+          <a href="https://www.w3schools.com/html" class="kelas-card">
+          <div class="kelas-card-content">
+              <p><b>Website Source Code HTML<br>Kumpulan Kode HTML</b></p>
+          </div>
+          </a>
+      </div><br>
+
+        <br>
+
+        <br><div class="kelas-container">
+            <a href="https://youtu.be/wriGST3vp5M?si=cM_QHGvwWeKirsl_" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>01. Belajar Web Dasar [HTML]<br>Apa itu HTML</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/GAd6FTsGSY8?si=RTypu_EXEo5dkbwA" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>02. Belajar Web Dasar [HTML]<br>Instalasi dan Persiapan</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/TM12RA6cmOQ?si=fQHhQqJ7udAzaFuQ" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>03. Belajar Web Dasar [HTML]<br>Struktur HTML</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/bd03BfqfOSk?si=G5TTj_J9C_zuF-u3" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>04. Belajar Web Dasar [HTML]<br>Heading dan Paragraph</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/F9Joj-lm4T0?si=vJWeqtsDq3s8AWoW" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>05. Belajar Web Dasar [HTML]<br>Underline, Superscript dan Subscript</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/C3g0-M5Raws?si=v5IBvFGaQAqmQPvq" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>06. Belajar Web Dasar [HTML]<br>Line Break dan Horizontal Rule</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/LkyYbxjFkeQ?si=VHTQe4i6HATCn2tT" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>07. Belajar Web Dasar [HTML]<br>Strong, Emphasis, Blockquote dan Quote</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/kVNJKVBAN-s?si=VwzdZ54uUcg-6Zry" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>08. Belajar Web Dasar [HTML]<br>Extra Tag</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/nzCmGkOkVUQ?si=hmLy4IgYJfn2z84X" class="kelas-card" style="background-color: #1E90FF;">
+            <div class="kelas-card-content" style="background-color: #1E90FF;">
+                <p><b>09. Latihan Web Dasar [HTML]<br>Latihan 1</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/ahukMeW11gg?si=2OA8MLJQYdMVHf6N" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>10. Belajar Web Dasar [HTML]<br>List</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/fOGbw_mFovA?si=wEZDL7pvqW1TaT-n" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>11. Belajar Web Dasar [HTML]<br>Link Dan Multi Page/b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/AxP8NPhCctA?si=9UHLPPt_RefO4Q54" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>12. Belajar Web Dasar [HTML]<br>HTML Attributes</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/UK5CPO7Q9uI?si=GWHWVkQOoukZ9qvg" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>13. Belajar Web Dasar [HTML]<br>Tabel</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/CBuFc2nGEDo?si=rFELJ1DcjrR3Lcqt" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>14. Belajar Web Dasar [HTML]<br>Form</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+          <a href="https://youtu.be/O6wjRNlkHUU?si=pXiR6orDzClBaX1P" class="kelas-card" style="background-color: #1E90FF;">
+          <div class="kelas-card-content" style="background-color: #1E90FF;">
+              <p><b>15. Latihan Web Dasar [HTML]<br>Latihan 2</b></p>
+          </div>
+          </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/M_ZlrjV0chU?si=ryyf47KYvwbM8U7w" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>16. Belajar Web Dasar [HTML]<br>Gambar</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/UbXUnaQ9hpc?si=FoBQ691-ndiboMwG" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>17. Belajar Web Dasar [HTML]<br>Video</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/AYfI3EVsrSc?si=NInGGfZpVHCKO-9k" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>18. Belajar Web Dasar [HTML]<br>Suara Dan Musik</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+            <a href="https://youtu.be/s_v0DaCXfMQ?si=5Y_CuMWZJZRUuJx9" class="kelas-card" style="background-color: #1E90FF;">
+            <div class="kelas-card-content" style="background-color: #1E90FF;">
+                <p><b>19. Latihan Web Dasar [HTML]<br>Latihan 3</b></p>
+            </div>
+            </a>
+        </div>
+
+        <div class="kelas-container">
+          <a href="https://youtu.be/iFw-AB4iAnQ?si=97S6mcWQHrW63sCl" class="kelas-card" style="background-color: #1E90FF;">
+          <div class="kelas-card-content" style="background-color: #1E90FF;">
+              <p><b>20. Latihan Web Dasar [HTML]<br>Latihan 4</b></p>
+          </div>
+          </a>
+      </div>
+    </div>
+      <script>
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburgerMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+      </script>
+</body>
+</html>

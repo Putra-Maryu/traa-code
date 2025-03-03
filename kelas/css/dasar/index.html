@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAA-CODE | CSS DASAR</title>
+    <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../../favicon/site.webmanifest">
+    <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+      padding: 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #1a1a1a;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1E90FF;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 5px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #1E90FF;
+      transform: scale(1.1);
+    }
+
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hamburger-icon {
+      font-size: 30px;
+      color: #1E90FF;
+    }
+
+    .konten-kelas {
+      padding: 20px;
+    }
+
+    .konten-kelas h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .kelas-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 1rem;   
+      justify-content: center;
+    }
+
+    .kelas-card {
+      display: flex;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 600px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .kelas-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .kelas-card img {
+      width: 200px;
+      object-fit: cover;
+    }
+
+    .kelas-card-content {
+      padding: 20px;
+    }
+
+    .kelas-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #1E90FF;
+    }
+
+    .kelas-card p {
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        text-align: left;
+      }
+
+      .nav-links li {
+        margin-left: 0;
+        margin-bottom: 15px;
+      }
+
+      .hamburger-menu {
+        display: block;
+      }
+
+      .nav-links.active {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 60%;
+        background-color: #1a1a1a;
+        z-index: 10;
+        padding: 20px;
+      }
+
+      .nav-links a {
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+
+      .konten h1 {
+        font-size: 24px;
+      }
+
+      .konten h2 {
+        font-size: 18px;
+      }
+
+      .konten p {
+        font-size: 14px;
+      }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="navbar">
+            <div class="navbar-brand" aria-label="NAMA">TRAA-CODE</div>
+            <div class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
+              <span class="hamburger-icon">&#9776;</span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li><a href="../../css/index.html" style="color: #1E90FF;">Kelas</a></li>
+              <li><a href="../../../linktree.html">Kontak</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+
+    <div class="konten-kelas">
+        <h1>CSS DASAR</h1>
+
+        <div class="kelas-container">
+          <a href="https://www.w3schools.com/css" class="kelas-card">
+          <div class="kelas-card-content">
+              <p><b>Website Source Code CSS<br>Kumpulan Kode CSS</b></p>
+          </div>
+          </a>
+      </div><br>
+
+        <br>
+
+        <!-- <div class="kelas-container"> -->
+          <div class="kelas-container">
+              <a href="https://youtu.be/AQOBN9XByf0?si=HfCWBjwj-sV2O1lY" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>01. Apa Itu CSS</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/NuJxNI0GltM?si=O9iOilERU0L_BHyr" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>02. Inline CSS</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/K_B2g1t0jVA?si=tAuFfmsCYtnT7hw8" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>03. Internal CSS</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/zYTdfOERybo?si=O66ye7uMElm8O7A6" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>04. Eksternal CSS</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/MiIo71YFvPg?si=uV3rom3jZgUZk-XO" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>05. CSS Selector</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/7wth_BWQHWM?si=GuWezhJqy3ttmd_K" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>06. Latihan CSS 1</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/kwMwjH26pSk?si=ph4xXLU-Oq5HAgur" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>07. Aturan Cascade</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/NqeO9fiRPVE?si=wjycHx2zU7tRmmvL" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>08. Inheritance</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/agM8Ayn8WZY?si=imi1bSv8amSo065D" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>09. Color</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/yxGa1oHGsak?si=bN_ARKP7lN0mQMp_" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>10. Color Alpha</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/eTCYgOhAF28?si=Z27_KdnbiHyViWAE" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>11. Latihan CSS 2</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/-ppX6hEz0iE?si=P74P4YtlGceBnnjy" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>12. Text - Font Family, Size, Weight, Style & Decoration</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/CpxP8iqEadU?si=B8lqcDoiajnOeNra" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>13. Text - Transform, Align, Color, Shadow, Hover, Active, Visited</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/zoCI0nFzlso?si=BuIlUbyO0GVaZDz6" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>14. Box, Height, Width, Overflow</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/863FJqp4FAw?si=JxX8A5ZofWnLNJQg" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>15. Pengenalan Box Model</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/vQdr67NiDBQ?si=0bxg0Pyq_XBpc-Rc" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>16. Border</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/vQdr67NiDBQ?si=y-b2IsdGoiTESImX" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>17. Padding</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/wr3leWJ65yM?si=YbhRSuKMxc7qWLUc" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>18. Margin</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+              <a href="https://youtu.be/muiCGzGNRRw?si=hujmBeUbkJBm7bTH" class="kelas-card">
+                  <div class="kelas-card-content">
+                      <p><b>19. Latihan CSS 3</b></p>
+                  </div>
+              </a>
+          </div>
+          <div class="kelas-container">
+            <a href="https://youtu.be/RMmaI5HP7ok?si=PDiwoB6nuhFnjYNt" class="kelas-card">
+                <div class="kelas-card-content">
+                    <p><b>20. Display Element</b></p>
+                </div>
+            </a>
+        </div>
+        
+    <div class="kelas-container">
+        <a href="https://youtu.be/pKItGnFCUHQ?si=kVCNpkRIUiEvjm0d" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>20. Latihan CSS 4</b></p>
+            </div>
+        </a>
+    </div>
+    <div class="kelas-container">
+        <a href="https://youtu.be/46NHpO8-_N4?si=XZ1P1vlgGEi-eU7e" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>21. Latihan CSS 5</b></p>
+            </div>
+        </a>
+    </div>
+    <div class="kelas-container">
+        <a href="https://youtu.be/aanpEgDI-6g?si=o7LylN0FCnLq2rvw" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>22. Lists Style</b></p>
+            </div>
+        </a>
+    </div>
+    <div class="kelas-container">
+        <a href="https://youtu.be/Ds4Aru39rak?si=yXMYj0KhDoTrrUVi" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>23. Table Style</b></p>
+            </div>
+        </a>
+    </div>
+    <div class="kelas-container">
+        <a href="https://youtu.be/fVQIrrSXWIU?si=c4EgdDD-co2bpjRR" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>24. Forms Style</b></p>
+            </div>
+        </a>
+    </div>
+    <div class="kelas-container">
+        <a href="https://youtu.be/sO4AupmNzX0?si=FKngGQHJ5XdA5Njk" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>25. Images Style</b></p>
+            </div>
+        </a>
+    </div>
+    <div class="kelas-container">
+        <a href="https://youtu.be/A5GkmGRrcLA?si=5PjrgD02bSdM28UA" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>26. Studi Kasus 1</b></p>
+            </div>
+        </a>
+    </div>
+    <div class="kelas-container">
+        <a href="https://youtu.be/e6NCDCXMV6U?si=AM5IFoD4ZqczYP-k" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>27. Studi Kasus 2</b></p>
+            </div>
+        </a>
+    </div>
+    <div class="kelas-container">
+        <a href="https://youtu.be/-B17ATAt9vA?si=LqTCMsSth4GgYAV2" class="kelas-card">
+            <div class="kelas-card-content">
+                <p><b>28. Studi Kasus 3</b></p>
+            </div>
+        </a>
+    </div>
+</div>
+
+      </div>
+      <script>
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburgerMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+      </script>
+</body>
+</html>

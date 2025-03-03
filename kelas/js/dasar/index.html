@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAA-CODE | JAVASCRIPT DASAR</title>
+    <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+      padding: 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #1a1a1a;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1E90FF;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 5px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #1E90FF;
+      transform: scale(1.1);
+    }
+
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hamburger-icon {
+      font-size: 30px;
+      color: #1E90FF;
+    }
+
+    .konten-kelas {
+      padding: 20px;
+    }
+
+    .konten-kelas h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .kelas-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 1rem;   
+      justify-content: center;
+    }
+
+    .kelas-card {
+      display: flex;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 600px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .kelas-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .kelas-card img {
+      width: 200px;
+      object-fit: cover;
+    }
+
+    .kelas-card-content {
+      padding: 20px;
+    }
+
+    .kelas-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #1E90FF;
+    }
+
+    .kelas-card p {
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        text-align: left;
+      }
+
+      .nav-links li {
+        margin-left: 0;
+        margin-bottom: 15px;
+      }
+
+      .hamburger-menu {
+        display: block;
+      }
+
+      .nav-links.active {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 60%;
+        background-color: #1a1a1a;
+        z-index: 10;
+        padding: 20px;
+      }
+
+      .nav-links a {
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+
+      .konten h1 {
+        font-size: 24px;
+      }
+
+      .konten h2 {
+        font-size: 18px;
+      }
+
+      .konten p {
+        font-size: 14px;
+      }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="navbar">
+            <div class="navbar-brand" aria-label="NAMA">TRAA-CODE</div>
+            <div class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
+              <span class="hamburger-icon">&#9776;</span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+              <li><a href="../../../index.html">Home</a></li>
+              <li><a href="../../js/index.html" style="color: #1E90FF;">Kelas</a></li>
+              <li><a href="../../../linktree.html">Kontak</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+
+    <div class="konten-kelas">
+        <h1>JAVASCRIPT DASAR</h1>
+
+        <div class="kelas-container">
+          <a href="https://www.w3schools.com/js" class="kelas-card">
+          <div class="kelas-card-content">
+              <p><b>Website Source Code JAVASCRIPT<br>Kumpulan Kode JAVASCRIPT</b></p>
+          </div>
+          </a>
+      </div><br>
+
+        <br>
+
+        <!-- <div class="kelas-container"> -->
+        <div class="kelas-container">
+            <a href="https://youtube.com/playlist?list=PLFIM0718LjIWXagluzROrA-iBY9eeUt4w&si=catAK5ChwBYTkVPT" class="kelas-card">
+                <div class="kelas-card-content">
+                    <p><b>Playlist JAVASCRIPT Dasar</b></p>
+                </div>
+            </a>
+        </div>
+    </div>
+      <script>
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburgerMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+      </script>
+</body>
+</html>

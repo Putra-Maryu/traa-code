@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRAA CODE | KELAS</title>
+  <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/site.webmanifest">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #1a1a1a;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      animation: slideDown 0.5s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-brand a {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1E90FF;
+      text-transform: uppercase;
+      animation: fadeIn 1s ease-in;
+      text-decoration: none;
+    }
+
+    .navbar-brand a:hover {
+      transform: scale(1.1);
+      color: #6495ED;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 5px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #1E90FF;
+      transform: scale(1.1);
+    }
+
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hamburger-icon {
+      font-size: 30px;
+      color: #1E90FF;
+    }
+
+    .konten {
+      margin-top: 20px;
+      text-align: center;
+      animation: fadeInUp 1s ease-in;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .konten h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .konten h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .konten p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .redirects {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .redirects h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .redirect-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      border-radius: 8px;
+      width: 200px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #1E90FF;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      padding: 40px 20px;
+      text-align: center;
+      color: #ffffff;
+      margin-top: 50px;
+      animation: fadeInUp 1s ease-in;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .footer-section {
+      width: 30%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .footer-section h3 {
+      font-size: 20px;
+      color: #1E90FF;
+      margin-bottom: 10px;
+    }
+
+    .footer-section p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .footer-links a {
+      color: #1E90FF;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #6495ED;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+    }
+
+    .footer-bottom p {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .footer-bottom span {
+      color: #e25555;
+    }
+
+    @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 60%;
+        margin-top: 10px;
+        text-align: left;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100%;
+        background-color: #1a1a1a;
+        z-index: 10;
+        padding: 20px;
+        animation: slideInRight 0.5s ease-in-out;
+      }
+
+      .nav-links.active {
+        display: flex;
+        height: 150%;
+        width: 50%;
+        left: 0;
+        animation: slideInRight 0.5s ease-in-out;
+      }
+
+      .nav-links li {
+        margin-left: 0;
+        margin-bottom: 15px;
+      }
+
+      .hamburger-menu {
+        display: block;
+      }
+
+      .nav-links a {
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+
+      .konten h1 {
+        font-size: 24px;
+      }
+
+      .konten h2 {
+        font-size: 18px;
+      }
+
+      .konten p {
+        font-size: 14px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .footer-bottom {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="navbar">
+        <div class="navbar-brand" aria-label="NAMA"><a href="../index.html">TRAA-CODE</a></div>
+        <div class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
+          <span class="hamburger-icon">&#9776;</span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" style="color: #1E90FF;">Kelas</a></li>
+          <li><a href="../linktree.html">Kontak</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="konten">
+    <h2>Belajar pemrograman jadi mudah dan menyenangkan di sini.</h2>
+    <p>Apapun level pengetahuan Anda, kami hadir untuk membantu Anda memulai perjalanan dalam dunia coding.</p>
+    <p>🚀 Pelajari HTML, CSS, JavaScript, dan masih banyak lagi!</p>
+    <p>🎯 Ikuti panduan langkah demi langkah yang dirancang khusus untuk pemula.</p>
+    <p>🎓 Jadilah ahli coding mulai dari dasar.</p>
+    <p>Mulailah petualangan Anda sekarang, dan jadilah bagian dari komunitas pembelajar yang penuh semangat!</p>
+    <p>Siap memulai? Klik tombol di bawah ini dan mulailah belajar!</p>
+  </div>
+
+  <div class="redirects">
+    <h2>Pilih Pembelajaran:</h2>
+    <div class="redirect-cards">
+      <div class="card" onclick="window.open('html/index.html')">
+        <img src="../assets/html.jpg" alt="TRAA Logo">
+        <h3>HTML5</h3>
+        <p>Belajar coding dasar HTML gratis.</p>
+      </div>
+      <div class="card" onclick="window.open('css/index.html')">
+        <img src="../assets/css.jpg" alt="TRAA Logo">
+        <h3>CSS</h3>
+        <p>Belajar coding dasar CSS gratis.</p>
+      </div>
+      <div class="card" onclick="window.open('../comingsoon.html')">
+        <img src="../assets/javascript.jpg" alt="TRAA Logo">
+        <h3>JAVASCRIPT</h3>
+        <p>Belajar coding dasar JAVASCRIPT gratis.</p>
+      </div>
+      <div class="card" onclick="window.open('../comingsoon.html')">
+        <img src="../assets/php.jpg" alt="TRAA Logo">
+        <h3>PHP</h3>
+        <p>Belajar coding dasar PHP gratis.</p>
+      </div>
+      <div class="card" onclick="window.open('../comingsoon.html')">
+        <img src="../assets/python.jpg" alt="TRAA Logo">
+        <h3>PYTHON</h3>
+        <p>Belajar coding dasar PYTHON gratis.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Informasi</h3>
+            <p>Belajar coding dari dasar, bersama kami di TRAA CODE. Temukan materi, tutorial, dan inspirasi untuk menjadi developer.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Motivasi</h3>
+            <p>"Coding bukan tentang menulis kode, melainkan tentang memecahkan masalah dan menciptakan solusi untuk masa depan."</p>
+        </div>
+        <div class="footer-section">
+            <h3>Sosial Media</h3>
+            <div class="footer-links">
+              <a href="https://instagram.com/traa_kinx" target="_blank">Instagram</a>
+              <a href="https://tiktok.com/@traa_developer" target="_blank">TikTok</a>
+              <a href="https://youtube.com/@TraaHost" target="_blank">YouTube</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-links">
+        <p><a href="https://policies.google.com/privacy?hl=id" target="_blank">Kebijakan Privasi</a></p>
+        <p><a href="https://policies.google.com/terms?hl=id" target="_blank">Syarat & Ketentuan</a></p>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 TRAA CODE | Semua hak dilindungi.</p>
+        <p>Dirancang oleh Putra Maryu Sunjaya</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburgerMenu.addEventListener('click', (e) => {
+      e.stopPropagation(); // Mencegah event bubbling ke document
+      navLinks.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('active') && !e.target.closest('.navbar')) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
